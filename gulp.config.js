@@ -4,7 +4,8 @@ module.exports ={
 		alljs:[
 			'./src/app/components/**/*.js',
 			'./src/app/shared/**/*.js',
-			'./src/app/**/*.js'
+			'./src/app/**/*.js',
+			'./src/assets/js/*.js'
 		],
 		index: './src/index.html',
 	
@@ -12,7 +13,8 @@ module.exports ={
 		var options = {
 			bowerJson: require('./bower.json'),
 			directory:'./bower_components',
-			ignorePath:'../..'
+			cwd:'./src',
+			relative:true
 		};	
 		return options;
 	}
