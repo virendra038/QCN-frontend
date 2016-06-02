@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>QCN</title>
+
+	<!-- bower:css -->
+	<!-- endbower -->
+
+	<!--inject:css -->
+	<!--endinject -->
+</head>
+<body ng-app="qcn" ng-controller="mainController">
+	<h1>veeru</h1>
+	{{message}}
+	<div ng-include="'./src/app/main/main.html'"></div>
+	<!--bower:js -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<!-- endbower -->
+
+
+	<!-- inject:js -->	
+		
+	<script src="/src/app/app.module.route.js"></script>	
+		
+	<script src="/src/app/main/mainController.js"></script>	
+		
+	<!-- endinject -->
+</body>
+</html>

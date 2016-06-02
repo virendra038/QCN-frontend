@@ -7,7 +7,7 @@ module.exports ={
 			'./src/app/**/*.js',
 			'./src/assets/js/*.js'
 		],
-		index: './src/index.html',
+		index: './index.html',
 	
 		getWiredepDefaultOptions: function(){
 		var options = {
