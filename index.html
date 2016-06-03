@@ -3,28 +3,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title>QCN</title>
-
 	<!-- bower:css -->
 	<!-- endbower -->
 
 	<!--inject:css -->
+	<link rel="stylesheet" href="/src/assets/CSS/stylesheets/ie.css">
+	<link rel="stylesheet" href="/src/assets/CSS/stylesheets/print.css">
+	<link rel="stylesheet" href="/src/assets/CSS/stylesheets/screen.css">
 	<!--endinject -->
 </head>
 <body ng-app="qcn" ng-controller="mainController">
 	<h1>veeru</h1>
-	{{message}}
+	<p ng-cloak>{{message}}</p>
+	<a ui-sref="">home</a>
 	<div ng-include="'./src/app/main/main.html'"></div>
+	
+
+	<div ui-view></div>
 	<!--bower:js -->
-	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<!-- endbower -->
 
 
 	<!-- inject:js -->	
 		
-	<script src="/src/app/app.module.route.js"></script>	
-		
+	<script src="/src/app/app.module.route.js"></script>		
 	<script src="/src/app/main/mainController.js"></script>	
 		
 	<!-- endinject -->

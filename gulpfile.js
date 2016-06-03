@@ -4,6 +4,7 @@ var wiredep = require('wiredep').stream;
 var config = require('./gulp.config');
 var inject = require('gulp-inject');
 var browserSync = require('browser-sync');
+var compass = require('gulp-compass');
 
 gulp.task('browser-sync', function () {
    browserSync.init({
@@ -12,7 +13,7 @@ gulp.task('browser-sync', function () {
            index: "index.html"
        },
        port:4211,
-       files:['./index.html'],
+       files:['./index.html','./src/app/**/*.js','./src/app/*.js'],
        ghostMode:{
 			clicks:true,
 			location:true,
@@ -37,6 +38,7 @@ gulp.task('html',function(){
 	.pipe(connect.reload());
 });
 
+// watch task 
 gulp.task('watch',function(){
 	gulp.watch(['./src/*.html'],['html']);
 });
@@ -57,6 +59,27 @@ gulp.task('inject',function(){
 			.pipe(gulp.dest('./'));
 });
 
+//injecting new css files in index.html
+
+gulp.task('style',function(){
+	return gulp.src(config.index)
+			.pipe(inject(gulp.src(config.css)))
+			.pipe(gulp.dest('./'));
+});
+
+//todo
+// compass task to compile scss into css 
+gulp.task('compass',function(){
+	gulp.src(config.scss)
+		.pipe(compass({
+			config_file:'./config.rb',
+			css:css_dir
+			sass:sass_dir
+		}))
+		.pipe(gulp.dest(config.css))
+});
+
+
 //default task
-gulp.task('default',['connect','watch']);
+gulp.task('default',[]);
 

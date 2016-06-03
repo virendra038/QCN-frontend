@@ -7,6 +7,8 @@ module.exports ={
 			'./src/app/**/*.js',
 			'./src/assets/js/*.js'
 		],
+		css:'./src/assets/CSS/stylesheets/*.css',
+		scss:'./src/assets/CSS/sass/*.scss',
 		index: './index.html',
 	
 		getWiredepDefaultOptions: function(){
